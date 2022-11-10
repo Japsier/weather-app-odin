@@ -4,6 +4,10 @@ let inputbox = document.querySelector("#search")
 let submitButton = document.querySelector(".searchButton")
 let degreeSwitch = document.querySelector("#degreeSwitch")
 
+degreeSwitch.addEventListener("click", () => {
+    getData(document.querySelector("#city").innerText)
+})
+
 submitButton.addEventListener("click", () => {
     let country = inputbox.value
     getData (country)
@@ -17,11 +21,18 @@ async function getData (country) {
         console.log(jsonFile)
         let lat;
         let lon;
+        if (jsonFile.message == "wrong latitude") {
+            console.log("error")
+            getData("Amsterdam")
+            return
+        }
         for(let i = 0; i < jsonFile.length; i++) {
             if(jsonFile[i].name.toUpperCase() === country.toUpperCase()) {
                 lat = jsonFile[i].lat;
                 lon = jsonFile[i].lon;
                 document.querySelector("#city").innerText = jsonFile[i].name
+                inputbox.placeholder = country
+                inputbox.value = ""
                 i = jsonFile.length
             } 
         }
@@ -30,6 +41,7 @@ async function getData (country) {
         getWeather(lat, lon)
     } catch {
         console.log("error")
+        getData("Amsterdam")
     }
 }
 
@@ -57,4 +69,4 @@ async function getWeather(lat, lon) {
 }
 
 getData("Amsterdam")
-inputbox.value = "Amsterdam"
+inputbox.placeholder = "Amsterdam"
