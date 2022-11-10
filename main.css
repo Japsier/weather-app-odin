@@ -562,11 +562,21 @@ video {
 }
 
 .bg-background-picture {
-  background-image: url('../pictures/backgroundImg');
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../pictures/backgroundImg');
 }
 
 .p-1 {
   padding: 0.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-3xl {
@@ -574,8 +584,16 @@ video {
   line-height: 2.25rem;
 }
 
+.font-medium {
+  font-weight: 500;
+}
+
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-white {
@@ -587,11 +605,19 @@ video {
   outline-width: 0px;
 }
 
+#search::-moz-placeholder {
+  color: white
+}
+
+#search::placeholder {
+  color: white
+}
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 74px;
+  height: 44px;
 }
 
 /* Hide default HTML checkbox */
@@ -619,10 +645,11 @@ video {
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   content: "°C";
   color: black;
-  height: 26px;
-  width: 26px;
+  height: 35px;
+  width: 35px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -638,7 +665,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(30px);
   content: "°F";
 }
 
