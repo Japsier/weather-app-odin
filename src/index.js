@@ -1,3 +1,5 @@
+import './style.css';
+
 let inputbox = document.querySelector("#search")
 let submitButton = document.querySelector(".searchButton")
 
@@ -45,4 +47,3 @@ async function getWeather(lat, lon) {
 let domStuff = () => {
     
 }
-getData()

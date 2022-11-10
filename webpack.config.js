@@ -11,18 +11,22 @@ const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : 'style-loader
 
 
 const config = {
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
     },
     devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'dist'),
+        },
         open: true,
         host: 'localhost',
     },
-    devtool: "inline-source-map",
+    devtool: "inline-cheap-source-map",
     plugins: [
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+
     ],
     module: {
         rules: [
@@ -32,7 +36,8 @@ const config = {
             },
             {
                 test: /\.css$/i,
-                use: [stylesHandler,'css-loader'],
+                include: path.resolve(__dirname, 'src'),
+                use: ['style-loader','css-loader', 'postcss-loader'],
             },
             {
                 test: /\.s[ac]ss$/i,
