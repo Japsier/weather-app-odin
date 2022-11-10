@@ -579,9 +579,14 @@ video {
   line-height: 1.75rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-medium {
@@ -616,8 +621,8 @@ video {
 .switch {
   position: relative;
   display: inline-block;
-  width: 74px;
-  height: 44px;
+  width: 78px;
+  height: 48px;
 }
 
 /* Hide default HTML checkbox */
@@ -631,13 +636,15 @@ video {
 /* The slider */
 
 .slider {
+  box-sizing: border-box;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2196F3;
+  border: 3px solid white;
+  background-color: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), transparent;
   transition: .4s;
 }
 
@@ -657,11 +664,11 @@ video {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color:  linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), transparent;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px  linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), transparent;
 }
 
 input:checked + .slider:before {

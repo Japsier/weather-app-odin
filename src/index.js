@@ -18,11 +18,9 @@ async function getData (country) {
     try {
         let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${country}&limit=5&appid=9da5f0d77aac89c44adc161546b98485`, {mode: "cors"});
         let jsonFile = await response.json()
-        console.log(jsonFile)
         let lat;
         let lon;
         if (jsonFile.message == "wrong latitude") {
-            console.log("error")
             getData("Amsterdam")
             return
         }
@@ -48,7 +46,6 @@ async function getData (country) {
 async function getWeather(lat, lon) {
     let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9da5f0d77aac89c44adc161546b98485`, {mode: "cors"})
     let dataJson = await data.json()
-    console.log(dataJson)
     let degrees = dataJson.main.temp
     if (degreeSwitch.checked === true) {
         document.getElementById("degrees").innerText  = "temperature: " + Math.round((1.8*(degrees-273.15) + 32) *100)/100 + " °F"
