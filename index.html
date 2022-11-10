@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="h-screen">
+    <head>
+        <meta charset="utf-8" />
+        <title>Weather App</title>
+        <link rel="stylesheet" href="main.css"> 
+    </head>
+    <body class="h-screen">
+        <main class="bg-background-picture h-full flex flex-col justify-center items-center gap-5 text-white">
+            <div class="absolute top-10 left-10">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <h2 class="text-3xl font-bold">City</h2>
+            <label for="search" class=" border-b-2">
+                <input type="text" name="search" id="search" class="p-1 bg-transparent outline-0">
+                <button class="searchButton hover:underline">Search</button>
+            </label>
+            <h3 class="">Description</h3>
+            <div id="statistics" class="flex gap-5">
+                <h4 class="">degrees</h4>
+                <h4>humidity</h4>
+            </div>
+        </main>
+
+        <script src="./bundle.js"></script>
+    </body>
+</html>
