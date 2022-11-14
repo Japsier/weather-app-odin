@@ -1,4 +1,4 @@
-import './style.css';
+//import './style.css';
 
 let inputbox = document.querySelector("#search")
 let submitButton = document.querySelector(".searchButton")
@@ -39,7 +39,8 @@ async function getData (country) {
         getWeather(lat, lon)
     } catch {
         console.log("error")
-        getData("Amsterdam")
+        setTimeout(getData("Amsterdam"), 1000)
+        
     }
 }
 
